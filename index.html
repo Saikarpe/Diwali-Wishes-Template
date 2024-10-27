@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login for Diwali Wishes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #ffefba, #ffffff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 300px;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #ff4500;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 1em 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e63900;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter the Magic Words</h2>
+    <input type="text" id="userInput" placeholder="Enter 'Happy Diwali'">
+    <button onclick="checkInput()">Submit</button>
+</div>
+
+<script>
+    function checkInput() {
+        const input = document.getElementById("userInput").value;
+        
+        if (input.trim() === "Happy Diwali") {
+            window.location.href = "diwali.html";  // Redirects to the new page
+        } else {
+            alert("Please enter the correct message to unlock the wishes.");
+        }
+    }
+</script>
+
+</body>
+</html>

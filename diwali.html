@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali from Sai and Family!</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            animation: burst 1s ease-out forwards;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .firework:nth-child(odd) {
+            background-color: #ff4500;
+        }
+        .firework:nth-child(even) {
+            background-color: #ff6347;
+        }
+        #familyPhoto {
+            margin-top: 20px;
+            border: 5px solid #ff6347;
+            border-radius: 10px;
+            width: 500px; /* Adjust to fit your photo */
+            height: auto;
+        }
+        @keyframes burst {
+            0% {
+                width: 5px;
+                height: 5px;
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+                transform: scale(1.5);
+            }
+            100% {
+                width: 5px;
+                height: 5px;
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎉 Happy Diwali! 🎉</h1>
+<p>Warm wishes from Sai and his family to yours!<br>
+May your life be filled with light, joy, and prosperity.</p>
+
+<!-- Add the family photo here -->
+<img id="familyPhoto" src="Wishes.jpg " alt="Sai's Family Photo">
+
+<script>
+    function createFirework(x, y) {
+        const firework = document.createElement("div");
+        firework.className = "firework";
+        firework.style.left = `${x}px`;
+        firework.style.top = `${y}px`;
+        document.body.appendChild(firework);
+
+        // Remove the firework after the animation ends
+        firework.addEventListener("animationend", () => {
+            firework.remove();
+        });
+    }
+
+    // Trigger fireworks at random locations every 500ms
+    setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        createFirework(x, y);
+    }, 500);
+</script>
+
+</body>
+</html>
